@@ -1,18 +1,55 @@
 /* /src/components/AdminPanel/AdminPanel.css */
 .admin-panel-container {
-    max-width: 300px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 50px;
-  }
-  
-  .admin-link {
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.admin-panel-sidebar {
+  width: 200px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+}
+
+.admin-panel-logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.admin-panel-option {
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.admin-panel-option.selected {
+  background-color: #e0e0e0;
+}
+
+.admin-panel-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.student-item {
+  list-style: none;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+}
+
+.student-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

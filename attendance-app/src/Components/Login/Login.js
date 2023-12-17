@@ -1,4 +1,3 @@
-// /src/components/Login/Login.js
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { app } from '../../firebase/firebase';
@@ -18,8 +17,8 @@ const Login = () => {
       const user = userCredential.user;
       console.log('Logged in user:', user);
       
-      // Redirect to "/add-student" after successful login
-      navigate('/add-student');
+      // Redirect to "/admin-panel" after successful login
+      navigate('/admin-panel');
 
       // Add additional logic after successful login if needed
     } catch (error) {
