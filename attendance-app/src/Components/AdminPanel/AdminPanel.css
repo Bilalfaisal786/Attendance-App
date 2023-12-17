@@ -1,55 +1,72 @@
 /* /src/components/AdminPanel/AdminPanel.css */
 .admin-panel-container {
   display: flex;
-  max-width: 1200px;
-  margin: 20px auto;
+  height: 100vh; /* Make the container cover the full height of the viewport */
 }
 
 .admin-panel-sidebar {
-  width: 200px;
-  background-color: #f9f9f9;
-  border-right: 1px solid #ccc;
+  background-color: #4caf50;
   padding: 20px;
+  color: white;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .admin-panel-logo {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
   margin-bottom: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .admin-panel-option {
   padding: 10px;
-  cursor: pointer;
   margin-bottom: 10px;
+  cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.admin-panel-option.selected {
-  background-color: #e0e0e0;
+.admin-panel-option:hover {
+  background-color: #45a049;
+}
+
+.selected {
+  background-color: #45a049;
 }
 
 .admin-panel-content {
-  flex: 1;
   padding: 20px;
+  flex: 1;
 }
 
+/* Add some basic styling to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Customize the look of the student item */
 .student-item {
-  list-style: none;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: #f2f2f2;
 }
 
-.student-info {
-  display: flex;
-  align-items: center;
-}
-
-.student-info img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
+/* Responsive image styling */
+img {
+  max-width: 100%;
+  height: auto;
 }
