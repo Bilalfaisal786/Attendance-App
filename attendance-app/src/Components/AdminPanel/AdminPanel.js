@@ -16,7 +16,7 @@ const AdminPanel = () => {
       try {
         const studentsCollection = collection(db, 'students');
         const studentsSnapshot = await getDocs(studentsCollection);
-        const studentList = studentsSnapshot.docs.map((doc) => doc.data());
+        const studentList = studentsSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
         setStudents(studentList);
       } catch (error) {
         console.error('Error fetching students:', error);
@@ -76,7 +76,28 @@ const AdminPanel = () => {
           <div>
             <h3>Student Information</h3>
             <table>
-              {/* ... (existing student table code) */}
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Picture</th>
+                </tr>
+              </thead>
+              <tbody>
+                {students.map((student) => (
+                  <tr key={student.id} className="student-item">
+                    <td>{student.id}</td>
+                    <td>{student.name}</td>
+                    <td>{student.email}</td>
+                    <td>{student.password}</td>
+                    <td>
+                      <img src={student.picture} alt={student.name} width="50" height="50" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         )}
