@@ -1,11 +1,12 @@
 /* /src/components/AdminPanel/AdminPanel.css */
+
 .admin-panel-container {
   display: flex;
-  height: 100vh; /* Make the container cover the full height of the viewport */
+  height: 100vh;
 }
 
 .admin-panel-sidebar {
-  background-color: #4caf50;
+  background-color: #0ef; /* Updated background color */
   padding: 20px;
   color: white;
   width: 200px;
@@ -30,11 +31,11 @@
 }
 
 .admin-panel-option:hover {
-  background-color: #45a049;
+  background-color: #0bf; /* Updated hover background color */
 }
 
 .selected {
-  background-color: #45a049;
+  background-color: #0bf; /* Updated selected background color */
 }
 
 .admin-panel-content {
@@ -42,7 +43,6 @@
   flex: 1;
 }
 
-/* Add some basic styling to the table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -56,16 +56,14 @@ th, td {
 }
 
 th {
-  background-color: #4caf50;
+  background-color: #0ef; /* Updated background color */
   color: white;
 }
 
-/* Customize the look of the student item */
 .student-item {
   background-color: #f2f2f2;
 }
 
-/* Responsive image styling */
 img {
   max-width: 100%;
   height: auto;
