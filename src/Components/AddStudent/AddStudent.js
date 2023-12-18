@@ -1,4 +1,3 @@
-// /src/components/AddStudent/AddStudent.js
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
@@ -10,9 +9,21 @@ const AddStudent = () => {
   const [password, setPassword] = useState('');
   const [picture, setPicture] = useState('');
   const [courseName, setCourseName] = useState('');
+  const [error, setError] = useState('');
+
+  const isEmailValid = (email) => {
+    // Simple email validation
+    return email.includes('@');
+  };
 
   const handleAddStudent = async () => {
     try {
+      // Validate form fields
+      if (!name || !id || !password || !isEmailValid(id) || password.length < 8) {
+        setError('Please fill in all required fields, provide a valid email, and ensure the password is at least 8 characters long.');
+        return;
+      }
+
       // Reference to the 'students' collection
       const studentRef = collection(db, 'students');
 
@@ -29,20 +40,23 @@ const AddStudent = () => {
       const docRef = await addDoc(studentRef, newStudent);
       console.log('Student added with ID: ', docRef.id);
 
-      // Clear form fields after successful registration
+      // Clear form fields and error message after successful registration
       setName('');
       setId('');
       setPassword('');
       setPicture('');
       setCourseName('');
+      setError('');
     } catch (error) {
       console.error('Error adding student: ', error);
+      setError('An error occurred while adding the student. Please try again later.');
     }
   };
 
   return (
     <div className="add-student-container">
       <h2>Add Student</h2>
+      {error && <div className="error-message">{error}</div>}
       <input
         type="text"
         placeholder="Name"
@@ -52,14 +66,14 @@ const AddStudent = () => {
       />
       <input
         type="text"
-        placeholder="ID"
+        placeholder="ID (Email)"
         value={id}
         onChange={(e) => setId(e.target.value)}
         className="add-student-input"
       />
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Password (At least 8 characters)"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="add-student-input"

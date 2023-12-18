@@ -82,7 +82,7 @@ const AdminPanel = () => {
                   <th>Name</th>
                   <th>Email</th>
                   <th>Password</th>
-                  <th>Picture</th>
+                  <th>Course Name</th>
                 </tr>
               </thead>
               <tbody>
@@ -92,8 +92,8 @@ const AdminPanel = () => {
                     <td>{student.name}</td>
                     <td>{student.email}</td>
                     <td>{student.password}</td>
-                    <td>
-                      <img src={student.picture} alt={student.name} width="50" height="50" />
+                    <td>{student.coursename}
+                      {/* <img src={student.picture} alt={student.name} width="50" height="50" /> */}
                     </td>
                   </tr>
                 ))}
