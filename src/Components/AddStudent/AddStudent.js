@@ -85,6 +85,7 @@ const AddStudent = () => {
         onChange={(e) => setPicture(e.target.value)}
         className="add-student-input"
       />
+      
       <input
         type="text"
         placeholder="Course Name"

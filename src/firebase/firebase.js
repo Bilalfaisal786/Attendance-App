@@ -6,6 +6,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
+  
   apiKey: "AIzaSyBde9ZY-5-7ni7TgJ8Lyx7s_RGJxwCj4yk",
   authDomain: "final-hackathon-project-a279f.firebaseapp.com",
   projectId: "final-hackathon-project-a279f",

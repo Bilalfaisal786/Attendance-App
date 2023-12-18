@@ -33,6 +33,7 @@ const AdminPanel = () => {
         // Redirect to the login page after successful logout
         navigate('/');
       })
+      
       .catch((error) => {
         console.error('Logout error:', error);
       });
